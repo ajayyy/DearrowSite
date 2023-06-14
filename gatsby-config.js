@@ -1,22 +1,22 @@
 module.exports = {
     siteMetadata: {
-        title: "SponsorBlock",
+        title: "DeArrow",
         description:
-            "SponsorBlock is a crowdsourced browser extension to skip sponsor segments in YouTube videos.",
+            "DeArrow is a browser extension for replacing titles and thumbnails on YouTube with community created accurate versions. No more clickbait.",
         author: "Ajay Ramachandran",
-        icon: "https://sponsor.ajay.app/LogoSponsorBlockSimple256px.png",
+        icon: "logo.svg",
     },
     plugins: [
         "gatsby-plugin-react-helmet",
         {
             resolve: "gatsby-plugin-manifest",
             options: {
-                name: "SponsorBlock",
-                short_name: "SponsorBlock",
+                name: "DeArrow",
+                short_name: "DeArrow",
                 start_url: "/",
                 background_color: "#fff",
                 theme_color: "#fff",
-                icon: "static/LogoSponsorBlockSimple256px.png",
+                icon: "static/logo.png",
             },
         },
         "gatsby-plugin-sass",

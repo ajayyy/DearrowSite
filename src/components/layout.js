@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
                             style={{ padding: "0.7rem 1.5rem" }}
                         >
                             <img
-                                src="/LogoSponsorBlockSimple256px.png"
+                                src="/logo.svg"
                                 alt="Home"
                                 style={{
                                     height: "2.1rem",
@@ -52,12 +52,6 @@ const Layout = ({ children }) => {
                     </li>
 
                     <li>
-                        <Link to="/stats" className="nav-link">
-                            Stats
-                        </Link>
-                    </li>
-
-                    <li>
                         <a
                             href="https://sponsor.ajay.app/news"
                             className="nav-link"
@@ -68,7 +62,7 @@ const Layout = ({ children }) => {
 
                     <li>
                         <a
-                            href="https://wiki.sponsor.ajay.app/w/Guidelines"
+                            href="https://wiki.sponsor.ajay.app/w/DeArrow/Guidelines"
                             className="nav-link"
                         >
                             Guidelines
@@ -77,7 +71,7 @@ const Layout = ({ children }) => {
 
                     <li>
                         <a
-                            href="https://wiki.sponsor.ajay.app/w/API_Docs"
+                            href="https://wiki.sponsor.ajay.app/w/API_Docs/DeArrow"
                             className="nav-link"
                         >
                             API
@@ -140,7 +134,7 @@ const Layout = ({ children }) => {
 
                     <li>
                         <a
-                            href="https://github.com/ajayyy/SponsorBlock"
+                            href="https://github.com/ajayyy/DeArrow"
                             className="nav-link"
                         >
                             <i className="fa fa-github"></i>

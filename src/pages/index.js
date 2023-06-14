@@ -4,100 +4,65 @@ import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import Donate from "../components/donate";
 
 const IndexPage = () => {
     const [totalStats, setTotalStats] = useState({
-        apiUsers: "Loading",
-        totalSubmissions: "Loading",
-        minutesSaved: "Loading",
+        activeUsers: "Loading",
+        titles: "Loading",
+        thumbnails: "Loading",
     });
 
-    const [donateModal, setDonateModal] = useState(null);
-
-    const [linkActive, setLinkActive] = useState(true);
-    const chromeLink = "https://chrome.google.com/webstore/detail/mnjggcdmjocbbbhaepdhchncahnbgone";
-    const firefoxLink = "https://addons.mozilla.org/addon/sponsorblock";
+    const chromeLink = "https://chrome.google.com/webstore/detail/enamippconapkdmgfgjchkhakpfinmaj";
+    const firefoxLink = "https://addons.mozilla.org/firefox/addon/dearrow";
 
     useEffect(() => {
-        fetch("https://sponsor.ajay.app/api/getTotalStats")
+        fetch("https://sponsor.ajay.app/api/brandingStats")
             .then((response) => response.json())
-            .then((resultData) => resultData.apiUsers !== undefined ? setTotalStats(resultData) : null);
+            .then((resultData) => resultData.activeUsers !== undefined ? setTotalStats(resultData) : null);
     }, []);
 
     return (
         <Layout>
             <Seo
                 title="Home"
-                overwriteTitle="SponsorBlock - Skip over YouTube Sponsors - Sponsorship Skipper"
+                overwriteTitle="DeArrow - Better Titles and Thumbnails"
             />
 
             <div className="title">
-                <img src="/LogoSponsorBlock256px.png" alt="Logo" />
+                <img src="/logo.svg" alt="Logo" />
 
-                <span style={{ color: "white" }}>SponsorBlock</span>
+                <span style={{ color: "white" }}>DeArrow</span>
             </div>
-            
-            {donateModal}
 
             <div className="container">
                 <div className="">
                     <p>
-                        SponsorBlock is an open-source crowdsourced browser
-                        extension and open API for skipping sponsor segments in
-                        YouTube videos. Users submit when a sponsor happens from
-                        the extension, and the extension automatically skips
-                        sponsors it knows about using a{" "}
-                        <a href="https://github.com/ajayyy/SponsorBlock/wiki/K-Anonymity">
-                            privacy preserving query system
-                        </a>
-                        . It also supports skipping other categories, such as
-                        intros, outros and reminders to subscribe, and skipping
-                        to the point with highlight.
+                        DeArrow is an open source browser extension for crowdsourcing better titles and thumbnails on YouTube.
+                        The goal is to make titles accurate and reduce sensationalism. No more arrows, ridiculous faces, and no more clickbait.
+                    </p>
+
+                    <img
+                        src="/screenshot1.png"
+                        alt="Screenshot of extension working"
+                    />
+
+                    <p>
+                        "Clickbait" isn't the exception anymore, it's becoming the norm.
+                        Many have even started going through their entire backlog, changing old titles and thumbnails to be more attention grabbing and vague.
+                    </p>
+                    
+                    <p>
+                        It's no one's fault. It's a system that creates a race to the bottom.
                     </p>
 
                     <p>
-                        Check{" "}
-                        <a href="https://status.sponsor.ajay.app">
-                            status.sponsor.ajay.app
-                        </a>{" "}
-                        for server status.
-                    </p>
-
-                    <p>
-                        There are currently{" "}
-                        <strong>{totalStats.apiUsers.toLocaleString()}</strong>{" "}
-                        users who have submitted{" "}
-                        <strong>
-                            {totalStats.totalSubmissions.toLocaleString()}
-                        </strong>{" "}
-                        skip segments, which have saved a total of{" "}
-                        <strong>
-                            {isNaN(totalStats.minutesSaved)
-                                ? totalStats.minutesSaved
-                                : Math.floor(
-                                      totalStats.minutesSaved / 60 / 24 / 365
-                                  )}
-                        </strong>{" "}
-                        years and{" "}
-                        <strong>
-                            {isNaN(totalStats.minutesSaved)
-                                ? totalStats.minutesSaved
-                                : (
-                                      (totalStats.minutesSaved / 60 / 24) %
-                                      365
-                                  ).toFixed(2)}
-                        </strong>{" "}
-                        days of people's lives. Check out{" "}
-                        <Link to="/stats">the leaderboard</Link>.
+                        DeArrow hopes to stop this cycle. It's time to return to a more peaceful experience.
                     </p>
 
                     <div className="text-center">
                         <h2>Download</h2>
 
-                        <a href={linkActive ? chromeLink : null}
-                            //onMouseDown={(e) => e.button === 0 && setLinkActive(false)}
-                            //onClick={(e) => clickLink(chromeLink, setDonateModal, () => setLinkActive(true))}
+                        <a href={chromeLink}
                         >
                             <img
                                 src="/ChromeWebStore_BadgeWBorder_v2_206x58.png"
@@ -105,9 +70,7 @@ const IndexPage = () => {
                             />
                         </a>
 
-                        <a href={linkActive ? firefoxLink : null}
-                            //onMouseDown={(e) => e.button === 0 && setLinkActive(false)}
-                            //onClick={() => clickLink(firefoxLink, setDonateModal, () => setLinkActive(true))}
+                        <a href={firefoxLink}
                             style={{ paddingLeft: "15px" }}
                         >
                             <img
@@ -117,23 +80,12 @@ const IndexPage = () => {
                         </a>
 
                         <a
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/Edge"
+                            href={chromeLink}
                             style={{ paddingLeft: "15px" }}
                         >
                             <img
                                 src="/edge.png"
                                 alt="Download for Edge"
-                                style={{ height: "58px" }}
-                            />
-                        </a>
-
-                        <a
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/Safari"
-                            style={{ paddingLeft: "15px" }}
-                        >
-                            <img
-                                src="/safari.svg"
-                                alt="Download for Safari"
                                 style={{ height: "58px" }}
                             />
                         </a>
@@ -145,81 +97,57 @@ const IndexPage = () => {
                             <img src="/opera.png" alt="Download for Opera" />
                         </a>
 
-                        <a
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/Android"
-                            style={{ paddingLeft: "15px" }}
-                        >
-                            <img
-                                src="/android.png"
-                                alt="Download for Android"
-                                style={{ height: "58px" }}
-                            />
-                        </a>
-
-                        <a
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/iOS"
-                            style={{ paddingLeft: "15px" }}
-                        >
-                            <img
-                                src="/IOS_logo.png"
-                                alt="Download for iOS"
-                                style={{ height: "58px" }}
-                            />
-                        </a>
-
                         <h3>3rd Party Ports</h3>
 
                         <a
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/3rd-Party-Ports#mpv-media-player"
+                            href="https://wiki.sponsor.ajay.app/w/DeArrow/Community#Discord"
                             style={{ paddingLeft: "15px" }}
                         >
-                            <img src="/mpv.png" alt="Download for MPV" />
-                        </a>
-
-                        <a
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/3rd-Party-Ports#kodi"
-                            style={{ paddingLeft: "15px" }}
-                        >
-                            <img
-                                src="/kodi.svg"
-                                alt="Download for Kodi"
-                                style={{ height: "30px" }}
-                            />
-                        </a>
-
-                        <a
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/3rd-Party-Ports#android-tv"
-                            style={{ paddingLeft: "15px" }}
-                        >
-                            <img
-                                src="/androidtv.png"
-                                alt="Download for Android TV"
-                                style={{ height: "30px" }}
-                            />
-                        </a>
-
-                        <a
-                            href="https://github.com/ajayyy/SponsorBlock/wiki/3rd-Party-Ports#Chromecast"
-                            style={{ paddingLeft: "15px" }}
-                        >
-                            <img
-                                src="/chromecast.svg"
-                                alt="Download for Chromecast"
-                                style={{ height: "30px" }}
-                            />
+                            <img src="/discord.png"
+                                alt="Download for Discord Integrations"
+                                style={{ height: "30px" }} />
                         </a>
                     </div>
 
                     <p>
+                        There are currently{" "}
+                        <strong>{totalStats.activeUsers.toLocaleString()}</strong>{" "}
+                        users who have submitted{" "}
+                        <strong>
+                            {totalStats.titles.toLocaleString()}
+                        </strong>{" "}
+                        titles and{" "}
+                        <strong>
+                            {totalStats.thumbnails.toLocaleString()}
+                        </strong>{" "}
+                        thumbnals.
+                    </p>
+
+                    <p>
+                        Titles can be any arbitrary text. Thumbnails are screenshots from specific timestamps in the video. These are user submitted and voted on.
+
+                        By default, if there are no submissions, it will format the original title to the user-specified format, and set a screenshot from a random timestamp as the thumbnail.
+                        This can be configured in the options to disable formatting, or show the original thumbnail by default.
+                    </p>
+
+                    <p>
+                        Check{" "}
+                        <a href="https://status.sponsor.ajay.app">
+                            status.sponsor.ajay.app
+                        </a>{" "}
+                        for server status.
+                    </p>
+
+                    <p>
                         The{" "}
-                        <a href="https://github.com/ajayyy/SponsorBlock">
+                        <a href="https://github.com/ajayyy/DeArrow">
                             source code
                         </a>{" "}
                         is fully open and the{" "}
                         <a href="https://sponsor.ajay.app/database">database</a>{" "}
                         can be downloaded by anyone. I want to keep this as open
                         as possible! You can view the docs for the{" "}
-                        <a href="https://wiki.sponsor.ajay.app/w/API_Docs">
+                        <a href="https://wiki.sponsor.ajay.app/w/API_Docs/DeArrow">
                             public API
                         </a>{" "}
                         or{" "}
@@ -242,11 +170,6 @@ const IndexPage = () => {
                         .
                     </p>
 
-                    <p style={{ fontSize: "0.7em", textAlign: "center" }}>
-                        SponsorBlock works best alongside YouTube Premium and
-                        uBlock Origin.
-                    </p>
-
                     <h4 className="text-center">Credit</h4>
 
                     <p className="text-center">
@@ -256,46 +179,34 @@ const IndexPage = () => {
 
                     <p className="text-center">
                         Website rewritten by{" "}
-                        <a href="https://github.com/jplsek">Jeremy Plsek</a>
+                        <a href="https://jeremyplsek.com/">Jeremy Plsek</a>
                     </p>
 
                     <p>
                         Thanks to all{" "}
-                        <a href="https://github.com/ajayyy/SponsorBlock/graphs/contributors">
-                            SponsorBlock contributors
+                        <a href="https://github.com/ajayyy/DeArrow/graphs/contributors">
+                            DeArrow contributors
                         </a>
                         ,{" "}
                         <a href="https://github.com/ajayyy/SponsorBlockServer/graphs/contributors">
                             SponsorBlockServer contributors
-                        </a>{" "}
-                        and{" "}
-                        <a href="https://github.com/ajayyy/SponsorBlockSite/graphs/contributors">
-                            SponsorBlockSite contributors
-                        </a>{" "}
-                        such as <a href="https://github.com/NDevTK">NDev</a>,{" "}
-                        <a href="https://github.com/Joe-Dowd">Joe Dowd</a>,{" "}
-                        <a href="https://mchang.name/">Michael Chang</a> and
-                        more.
-                    </p>
-
-                    <p className="text-center">
-                        Neural network moderation powered by{" "}
-                        <a href="https://github.com/andrewzlee">
-                            Andrew Lee{"'"}s
-                        </a>{" "}
-                        <a href="https://github.com/andrewzlee/NeuralBlock">
-                            NeuralBlock
                         </a>
-                        .
+                        , {" "}
+                        <a href="https://github.com/ajayyy/DeArrowSite/graphs/contributors">
+                            DeArrowSite contributors
+                        </a>
+                        , and replacement title and thumbnail contributors{" "}
+                        such as <a href="https://mchang.name/">Michael Chang</a>,{" "}
+                        <a href="https://github.com/mschae23">mschae23</a>,{" "}
+                        <a href="https://github.com/SuperManifolds">Alex Sørlie</a>,{" "}
+                        <a href="https://mlnr.dev/">cane</a>,{" "}
+                        UnventedManicotti,{" "}
+                        jiraph{" "}
+                        and more.
                     </p>
 
                     <p className="text-center">
-                        Logo by{" "}
-                        <a href="https://github.com/munadikieh">@munadikieh</a>
-                    </p>
-
-                    <p className="text-center">
-                        <a href="https://gist.github.com/ajayyy/aa9f8ded2b573d4f73a3ffa0ef74f796">
+                        <a href="https://gist.github.com/ajayyy/9bfec83d57ea34f5182658ec8445aa9d">
                             Privacy Policy (Human Readable)
                         </a>
                         {", "}
@@ -310,24 +221,5 @@ const IndexPage = () => {
         </Layout>
     );
 };
-
-function getDonateModal(link, clear) {
-    return <Donate downloadLink={link} clear={clear} />;
-}
-
-function clickLink(link, set, clear) {
-    if (window.localStorage.getItem("donateModalOpened") !== "true") {
-        window.localStorage.setItem("donateModalOpened", "true");
-        set(getDonateModal(link, () => {
-            set(null);
-            if (clear) clear();
-        }));
-    } else {
-        window.location.href = link;
-        
-        // To prevent double link opens
-        if (clear) setTimeout(() => clear(), 50);
-    }
-}
 
 export default IndexPage;

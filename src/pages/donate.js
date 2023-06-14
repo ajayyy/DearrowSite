@@ -32,37 +32,29 @@ const IndexPage = () => (
 
             <hr noshade />
 
-            <h4>Creators</h4>
-
-            <p>
-                Consider helping out the creators of videos you watch by
-                donating to their crowdfunding campaigns, or subscribing to
-                services such as YouTube Premium.
-            </p>
-
             <h4>Contributors</h4>
 
             <p>
                 Also check out all the other contributors who have helped out
                 with this project;{" "}
-                <a href="https://github.com/ajayyy/SponsorBlock/graphs/contributors">
-                    SponsorBlock contributors
+                <a href="https://github.com/ajayyy/DeArrow/graphs/contributors">
+                    DeArrow contributors
                 </a>
                 ,{" "}
                 <a href="https://github.com/ajayyy/SponsorBlockServer/graphs/contributors">
                     SponsorBlockServer contributors
-                </a>{" "}
-                and{" "}
-                <a href="https://github.com/ajayyy/SponsorBlockSite/graphs/contributors">
-                    SponsorBlockSite contributors
-                </a>{" "}
-                such as <a href="https://github.com/NDevTK">NDev</a>,{" "}
-                <a href="https://github.com/Joe-Dowd">Joe Dowd</a>,{" "}
-                <a href="https://mchang.name/">Michael Chang</a> and more.
-            </p>
-
-            <p>
-                Also, all of the <a href="/stats">segment submitters</a>.
+                </a>
+                , {" "}
+                <a href="https://github.com/ajayyy/DeArrowSite/graphs/contributors">
+                    DeArrowSite contributors
+                </a>
+                , and replacement title and thumbnail contributors{" "}
+                such as <a href="https://mchang.name/">Michael Chang</a>,{" "}
+                <a href="https://github.com/mschae23">mschae23</a>,{" "}
+                <a href="https://github.com/SuperManifolds">Alex Sørlie</a>,{" "}
+                <a href="https://mlnr.dev/">cane</a>,{" "}
+                UnventedManicotti,{" "}
+                and more.
             </p>
         </div>
     </Layout>
