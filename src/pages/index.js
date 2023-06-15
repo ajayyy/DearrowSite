@@ -124,6 +124,21 @@ const IndexPage = () => {
                     </p>
 
                     <p>
+                        Watch a demo below!
+                    </p>
+
+
+                    <a 
+                        href="https://www.youtube.com/watch?v=QjjpDhHh_QI"
+                        target="_blank"
+                        rel="noreferrer">
+                        <img
+                            src="/video.png"
+                            alt="Demo video"
+                        />
+                    </a>
+
+                    <p>
                         Titles can be any arbitrary text. Thumbnails are screenshots from specific timestamps in the video. These are user submitted and voted on.
 
                         By default, if there are no submissions, it will format the original title to the user-specified format, and set a screenshot from a random timestamp as the thumbnail.
