@@ -51,8 +51,7 @@ const IndexPage = () => (
             <h3>When was this started</h3>
 
             <p>
-                I've had ideas to work on something like this for a while while working on SponsorBlock,
-                and finally was able to get something ready to release to the public
+                DeArrow was first released to the public
                 on June 10th 2023.
             </p>
 
