@@ -24,8 +24,7 @@ const IndexPage = () => {
     return (
         <Layout>
             <Seo
-                title="Home"
-                overwriteTitle="DeArrow - Better Titles and Thumbnails"
+                title="DeArrow - A Browser Extension for Better Titles and Thumbnails"
             />
 
             <div className="title">
