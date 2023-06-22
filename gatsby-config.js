@@ -4,7 +4,7 @@ module.exports = {
         description:
             "DeArrow is a browser extension for replacing titles and thumbnails on YouTube with community created accurate versions. No more clickbait.",
         author: "Ajay Ramachandran",
-        icon: "logo-1024.png",
+        icon: "https://dearrow.ajay.app/logo-1024.png",
     },
     plugins: [
         "gatsby-plugin-react-helmet",
