@@ -337,3 +337,17 @@ table.highlight-row-on-hover tr:hover td {
         padding: 0;
     }
 }
+
+.paywall-notice {
+    font-style: italic;
+    font-size: 11px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.paywall-notice > div {
+    max-width: 300px;
+    text-align: center;
+}

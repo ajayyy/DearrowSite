@@ -96,6 +96,15 @@ const IndexPage = () => {
                             <img src="/opera.png" alt="Download for Opera" />
                         </a>
 
+                        <div class="paywall-notice">
+                            <div>
+                                Please note that DeArrow is in beta.{" "}
+                                DeArrow is free, forever, for anyone who installs during the beta. However,{" "}
+                                there will be a soft-paywall for new users in the future.{" "}
+                                <a href="https://gist.github.com/ajayyy/36a96ffc786f4e518fb62cac8b9674aa" rel="noreferrer" target="_blank">See details</a>
+                            </div>
+                        </div>
+
                         <h3>3rd Party Ports</h3>
 
                         <a
