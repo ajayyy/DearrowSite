@@ -1,10 +1,10 @@
-# SponsorBlock Landing
+# Dearrow Landing
 
 This uses the `gatsby` static site generator.
 
 Install `npm` to start.
 
-Then `cd SponsorBlockSite`.
+Then `cd DearrowSite`.
 
 ### Install dependencies
 
