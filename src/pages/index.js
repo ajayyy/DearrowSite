@@ -119,7 +119,7 @@ const IndexPage = () => {
                         <strong>
                             {totalStats.thumbnails.toLocaleString()}
                         </strong>{" "}
-                        thumbnals.
+                        thumbnails.
                     </p>
 
                     <p>
