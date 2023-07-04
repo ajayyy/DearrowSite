@@ -108,6 +108,15 @@ const IndexPage = () => {
                         <h3>3rd Party Ports</h3>
 
                         <a
+                            href="https://wiki.sponsor.ajay.app/w/DeArrow/Community#Desktop"
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img src="/computer.svg"
+                                alt="Download for Desktop"
+                                style={{ height: "30px" }} />
+                        </a>
+
+                        <a
                             href="https://wiki.sponsor.ajay.app/w/DeArrow/Community#Discord"
                             style={{ paddingLeft: "15px" }}
                         >
