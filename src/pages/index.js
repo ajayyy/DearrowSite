@@ -117,6 +117,15 @@ const IndexPage = () => {
                         </a>
 
                         <a
+                            href="https://github.com/ajayyy/DeArrow/issues/39#issuecomment-1622742284"
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img src="/invidious-logo.svg"
+                                alt="Userscript for Invidious"
+                                style={{ height: "30px" }} />
+                        </a>
+
+                        <a
                             href="https://wiki.sponsor.ajay.app/w/DeArrow/Community#Discord"
                             style={{ paddingLeft: "15px" }}
                         >
