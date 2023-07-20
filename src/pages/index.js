@@ -96,6 +96,13 @@ const IndexPage = () => {
                             <img src="/opera.png" alt="Download for Opera" />
                         </a>
 
+                        <a
+                            href={"https://github.com/ajayyy/DeArrow/wiki/Android"}
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img src="/android.png" alt="Download for Android" />
+                        </a>
+
                         <div class="paywall-notice">
                             <div>
                                 Please note that DeArrow is in beta.{" "}
