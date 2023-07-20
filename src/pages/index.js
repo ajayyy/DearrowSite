@@ -98,9 +98,12 @@ const IndexPage = () => {
 
                         <a
                             href={"https://github.com/ajayyy/DeArrow/wiki/Android"}
-                            style={{ paddingLeft: "15px", height: "58px" }}
+                            style={{ paddingLeft: "15px" }}
                         >
-                            <img src="/android.png" alt="Download for Android" />
+                            <img 
+                                src="/android.png" 
+                                alt="Download for Android"
+                                style={{ height: "58px" }} />
                         </a>
 
                         <div class="paywall-notice">
