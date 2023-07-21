@@ -79,6 +79,16 @@ const IndexPage = () => {
                         </a>
 
                         <a
+                            href={"https://apps.apple.com/ca/app/dearrow-for-youtube/id6451469297"}
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img 
+                                src="/safari.svg" 
+                                alt="Download for Safari on macOS or iOS"
+                                style={{ height: "58px" }} />
+                        </a>
+
+                        <a
                             href={chromeLink}
                             style={{ paddingLeft: "15px" }}
                         >
@@ -103,6 +113,16 @@ const IndexPage = () => {
                             <img 
                                 src="/android.png" 
                                 alt="Download for Android"
+                                style={{ height: "58px" }} />
+                        </a>
+
+                        <a
+                            href={"https://apps.apple.com/ca/app/dearrow-for-youtube/id6451469297"}
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img 
+                                src="/IOS_logo.png" 
+                                alt="Download for iOS"
                                 style={{ height: "58px" }} />
                         </a>
 
