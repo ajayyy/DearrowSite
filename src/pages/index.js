@@ -79,7 +79,7 @@ const IndexPage = () => {
                         </a>
 
                         <a
-                            href={"https://apps.apple.com/ca/app/dearrow-for-youtube/id6451469297"}
+                            href={"https://apps.apple.com/app/dearrow-for-youtube/id6451469297"}
                             style={{ paddingLeft: "15px" }}
                         >
                             <img 
@@ -117,7 +117,7 @@ const IndexPage = () => {
                         </a>
 
                         <a
-                            href={"https://apps.apple.com/ca/app/dearrow-for-youtube/id6451469297"}
+                            href={"https://apps.apple.com/app/dearrow-for-youtube/id6451469297"}
                             style={{ paddingLeft: "15px" }}
                         >
                             <img 
