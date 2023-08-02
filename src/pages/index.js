@@ -4,6 +4,8 @@ import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
+import { extensionLinks } from "../utils/links";
+import BeforeAfterImage from "../components/beforeAfterImage";
 
 const IndexPage = () => {
     const [totalStats, setTotalStats] = useState({
@@ -12,8 +14,8 @@ const IndexPage = () => {
         thumbnails: "Loading",
     });
 
-    const chromeLink = "https://chrome.google.com/webstore/detail/enamippconapkdmgfgjchkhakpfinmaj";
-    const firefoxLink = "https://addons.mozilla.org/firefox/addon/dearrow";
+    const chromeLink = extensionLinks.chrome;
+    const firefoxLink = extensionLinks.firefox;
 
     useEffect(() => {
         fetch("https://sponsor.ajay.app/api/brandingStats")
@@ -40,9 +42,9 @@ const IndexPage = () => {
                         The goal is to make titles accurate and reduce sensationalism. No more arrows, ridiculous faces, and no more clickbait.
                     </p>
 
-                    <img
-                        src="/screenshot1.png"
-                        alt="Screenshot of extension working"
+                    <BeforeAfterImage
+                        image1="/before.png"
+                        image2="/after.jpg"
                     />
 
                     <p>

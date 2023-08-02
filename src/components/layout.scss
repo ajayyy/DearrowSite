@@ -6,6 +6,8 @@ $page-background-color: #333333;
 :root {
     --categorystats-piechart-size: 200px;
     color-scheme: dark;
+
+    --max-width: 768px;
 }
 
 body {
@@ -95,7 +97,7 @@ img {
 }
 
 .container {
-    max-width: 768px;
+    max-width: var(--max-width);
     margin: auto;
     padding-right: $side-padding;
     padding-left: $side-padding;
@@ -350,4 +352,60 @@ table.highlight-row-on-hover tr:hover td {
 .paywall-notice > div {
     max-width: 300px;
     text-align: center;
+}
+
+img.before-after-image {
+    height: auto;
+    width: min(calc(100vw - $side-padding * 2), var(--max-width));
+    max-width: inherit;
+}
+
+.after-image {
+    position: absolute;
+}
+
+.draggable-before-image {
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.draggable-before-image.initial-animation {
+    animation: before-after-initial-animation 4s ease-in-out;
+    width: 19%;
+}
+
+.draggable-before-image:not(.initial-animation) {
+    transition: width 0.05s ease-out;
+}
+
+@keyframes before-after-initial-animation {
+    0% {
+        width: 19%;
+    }
+    40% {
+        width: 100%;
+    }
+    90% {
+        width: 0%;
+    }
+    100% {
+        width: 19%;
+    }
+}
+
+.draggable-before-image::before {
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 0;
+    position: absolute;
+    content: "";
+
+    border-right: 5px solid white;
+}
+
+.before-after-container {
+    line-height: 0;
 }
