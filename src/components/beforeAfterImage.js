@@ -5,7 +5,6 @@ const BeforeAfterImage = (props) => {
     const [initialAnimation, setInitialAnimation] = useState(true);
 
     const mouseEvent = (e) => {
-        console.log(e.clientX)
         setInitialAnimation(false);
 
         const rect = e.currentTarget.getBoundingClientRect();
@@ -29,7 +28,7 @@ const BeforeAfterImage = (props) => {
                 draggable="false"
                 className={"draggable-before-image" + (initialAnimation ? " initial-animation" : "")}
                 style={{
-                    width: position ? `${position * 100}%` : undefined,
+                    width: position != null ? `${position * 100}%` : undefined,
                 }}>
                 <img src={props.image1} 
                     className="before-after-image" 
