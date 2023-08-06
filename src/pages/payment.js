@@ -12,6 +12,37 @@ const serverAddress = "https://sponsor.ajay.app";
 const hashParams = getHashParams();
 let safeToSendMessages = false;
 
+if (typeof window !== "undefined") {
+    const inExtension = window.top !== window.self;
+    if (inExtension) {
+        console.log(inExtension)
+        window.addEventListener("message", (e) => {
+            console.log(e)
+            // Only allow browser extensions to do this
+            if (!safeToSendMessages && !e.origin.match(/^https?:\/\//) && e.data === "dearrow-payment-page") {
+                safeToSendMessages = true;
+
+                const choices = {
+                    freeTrial: localStorage.getItem("freeTrial"),
+                    licenseKey: localStorage.getItem("licenseKey"),
+                    freeAccess: localStorage.getItem("freeAccess")
+                }
+
+                if (choices.freeTrial || choices.licenseKey || choices.freeAccess) {
+                    window.top.postMessage({
+                        message: "dearrow-payment-page-data",
+                        choices
+                    }, "*");
+
+                    localStorage.removeItem("freeTrial");
+                    localStorage.removeItem("licenseKey");
+                    localStorage.removeItem("freeAccess");
+                }
+            }
+        });
+    }
+}
+
 const PaymentsPage = () => {
     const [redeemEnabled, setRedeemEnabled] = useState(false);
     const [openFreeAccessModal, setOpenFreeAccessModal] = useState(false);
@@ -29,31 +60,7 @@ const PaymentsPage = () => {
             setShowFreeTrial(true);
         }
 
-        if (inExtension) {
-            window.addEventListener("message", (e) => {
-                // Only allow browser extensions to do this
-                if (!e.origin.match(/^https?:\/\//) && e.data === "dearrow-payment-page") {
-                    safeToSendMessages = true;
-
-                    const choices = {
-                        freeTrial: localStorage.getItem("freeTrial"),
-                        licenseKey: localStorage.getItem("licenseKey"),
-                        freeAccess: localStorage.getItem("freeAccess")
-                    }
-
-                    if (choices.freeTrial || choices.licenseKey || choices.freeAccess) {
-                        window.top.postMessage({
-                            message: "dearrow-payment-page-data",
-                            choices
-                        }, "*");
-
-                        localStorage.removeItem("freeTrial");
-                        localStorage.removeItem("licenseKey");
-                        localStorage.removeItem("freeAccess");
-                    }
-                }
-            });
-        } else {
+        if (!inExtension) {
             setNextPage(hashParams.link ? extensionLinks[hashParams.link] : extensionLinks.chrome);
         }
     }, []);
