@@ -7,6 +7,8 @@ import Seo from "../components/seo";
 import { extensionLinks } from "../utils/links";
 import BeforeAfterImage from "../components/beforeAfterImage";
 
+const paywallEnabled = false;
+
 const IndexPage = () => {
     const [totalStats, setTotalStats] = useState({
         activeUsers: "Loading",
@@ -14,8 +16,15 @@ const IndexPage = () => {
         thumbnails: "Loading",
     });
 
-    const chromeLink = extensionLinks.chrome;
-    const firefoxLink = extensionLinks.firefox;
+    const [chromeLink, setChromeLink] = useState(extensionLinks.chrome);
+    const [firefoxLink, setFirefoxLink] = useState(extensionLinks.firefox);
+
+    useEffect(() => {
+        if (paywallEnabled) {
+            setChromeLink(`payment#link=chrome`);
+            setFirefoxLink(`payment#link=firefox`);
+        }
+    });
 
     useEffect(() => {
         fetch("https://sponsor.ajay.app/api/brandingStats")
@@ -128,7 +137,7 @@ const IndexPage = () => {
                                 style={{ height: "58px" }} />
                         </a>
 
-                        <div class="paywall-notice">
+                        <div className="paywall-notice">
                             <div>
                                 Please note that DeArrow is in beta.{" "}
                                 DeArrow is free, forever, for anyone who installs during the beta. However,{" "}
