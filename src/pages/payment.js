@@ -15,9 +15,7 @@ let safeToSendMessages = false;
 if (typeof window !== "undefined") {
     const inExtension = window.top !== window.self;
     if (inExtension) {
-        console.log(inExtension)
         window.addEventListener("message", (e) => {
-            console.log(e)
             // Only allow browser extensions to do this
             if (!safeToSendMessages && !e.origin.match(/^https?:\/\//) && e.data === "dearrow-payment-page") {
                 safeToSendMessages = true;
