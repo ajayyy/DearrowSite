@@ -42,6 +42,7 @@ if (typeof window !== "undefined") {
 }
 
 const PaymentsPage = () => {
+    const [showBeforeAfter, setShowBeforeAfter] = useState(false);
     const [redeemEnabled, setRedeemEnabled] = useState(false);
     const [openFreeAccessModal, setOpenFreeAccessModal] = useState(false);
     const [showFreeTrial, setShowFreeTrial] = useState(false);
@@ -61,6 +62,8 @@ const PaymentsPage = () => {
         if (!inExtension) {
             setNextPage(hashParams.link ? extensionLinks[hashParams.link] : extensionLinks.chrome);
         }
+
+        setShowBeforeAfter(true);
     }, []);
 
     return (
@@ -246,10 +249,13 @@ const PaymentsPage = () => {
 
                 <br/>
 
-                <BeforeAfterImage
-                    image1="/before.png"
-                    image2="/after.jpg"
-                />
+                {
+                    showBeforeAfter &&
+                    <BeforeAfterImage
+                        image1="/before.png"
+                        image2="/after.jpg"
+                    />
+                }
             </div>
         </div>
     );
