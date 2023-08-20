@@ -139,7 +139,7 @@ const IndexPage = () => {
 
                         {
                             !paywallEnabled &&
-                                <div class="paywall-notice">
+                                <div className="paywall-notice">
                                     <div>
                                         Please note that DeArrow is in beta.{" "}
                                         DeArrow is free, forever, for anyone who installs during the beta. However,{" "}
