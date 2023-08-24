@@ -75,7 +75,7 @@ const PaymentsPage = () => {
             <div className="payment-container container">
                 <p>
                     DeArrow is a paid browser extension. 
-                    You can purchase a license key for a one time payment, or get access through a Patreon subscription.
+                    You can purchase an unlimited-use license key for a one time payment.
                 </p>
 
                 <p>
@@ -104,13 +104,7 @@ const PaymentsPage = () => {
                 <div className="center row-item">
                     <a href="https://theajayyy.itch.io/dearrow" className="option-link side-by-side" target="_blank" rel="noreferrer">
                         <div id="oneTimePurchase" className="option-button inline">
-                            One Time Purchase
-                        </div>
-                    </a>
-
-                    <a href="https://www.patreon.com/ajayyy" className="option-link side-by-side" target="_blank" rel="noreferrer">
-                        <div className="option-button side-by-side inline">
-                            Subscribe on Patreon
+                            Buy for $3
                         </div>
                     </a>
                 </div>
