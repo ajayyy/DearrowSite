@@ -21,9 +21,9 @@ if (typeof window !== "undefined") {
                 safeToSendMessages = true;
 
                 const choices = {
-                    freeTrial: localStorage.getItem("freeTrial"),
-                    licenseKey: localStorage.getItem("licenseKey"),
-                    freeAccess: localStorage.getItem("freeAccess")
+                    freeTrial: localStorageGet("freeTrial"),
+                    licenseKey: localStorageGet("licenseKey"),
+                    freeAccess: localStorageGet("freeAccess")
                 }
 
                 if (choices.freeTrial || choices.licenseKey || choices.freeAccess) {
@@ -55,7 +55,7 @@ const PaymentsPage = () => {
         const inExtension = window.top !== window.self;
         setInExtension(inExtension);
 
-        if (!hashParams.hideFreeTrial && !localStorage.getItem("usedFreeTrial")) {
+        if (!hashParams.hideFreeTrial && !localStorageGet("usedFreeTrial")) {
             setShowFreeTrial(true);
         }
 
@@ -264,10 +264,10 @@ function startFreeTrial(inExtension) {
             }
         }, "*");
     } else {
-        localStorage.setItem("freeTrial", true);
+        localStorageSet("freeTrial", true);
     }
 
-    localStorage.setItem("usedFreeTrial", true);
+    localStorageSet("usedFreeTrial", true);
 }
 
 async function redeemLicenseKey(setRedeemEnabled, nextPage, inExtension) {
@@ -290,7 +290,7 @@ async function redeemLicenseKey(setRedeemEnabled, nextPage, inExtension) {
             }
         }, "*");
     } else {
-        localStorage.setItem("licenseKey", key);
+        localStorageSet("licenseKey", key);
 
         alert("Redeem successful! Now install the extension")
 
@@ -324,7 +324,23 @@ function requestFreeAccess(inExtension) {
             }
         }, "*");
     } else {
-        localStorage.setItem("freeAccess", true);
+        localStorageSet("freeAccess", true);
+    }
+}
+
+function localStorageGet(key) {
+    try {
+        return localStorage.getItem(key);
+    } catch (e) {
+        return undefined;
+    }
+}
+
+function localStorageSet(key, value) {
+    try {
+        return localStorage.setItem(key, value);
+    } catch (e) {
+        return undefined;
     }
 }
 
