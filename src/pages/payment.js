@@ -101,6 +101,29 @@ const PaymentsPage = () => {
                     </div>
                 }
 
+                <div className="center row-item who-am-i">
+                    <p className="header">
+                        Who am I?
+                    </p>
+
+                    <p className="text">
+                        Hi, I'm Ajay.
+                        For the last 4 years, I've been working on SponsorBlock, an open-source privacy respecting browser extension and open API for skipping and identifying sponsors and other annoyances in YouTube videos.
+                        In June, I launched DeArrow, an extension targeting the next biggest annoyance on YouTube.
+                    </p>
+
+                    <p className="text">
+                        In January 2024, I will be graduating from university and hope to make SponsorBlock, DeArrow and future open source user-focused tools my full time job.
+                        This DeArrow paywall is how I believe I'm going to make that possible.
+                    </p>
+
+                    <p className="text">
+                        With this paywall, I am trying to create a funding mechanism for my projects while still allowing universal access.
+                        That's why <b>if you cannot or do not want to pay, I very much still want you to still be able to use DeArrow as much as anyone else using the button at the bottom.</b>{" "}
+                        But, if you can pay, I would really appreciate you supporting the project.
+                    </p>
+                </div>
+
                 <div className="center row-item">
                     <a href="https://theajayyy.itch.io/dearrow" className="option-link side-by-side" target="_blank" rel="noreferrer">
                         <div id="oneTimePurchase" className="option-button inline">
