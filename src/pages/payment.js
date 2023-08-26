@@ -113,7 +113,7 @@ const PaymentsPage = () => {
                     </p>
 
                     <p className="text">
-                        In January 2024, I will be graduating from university and hope to make SponsorBlock, DeArrow and future open source user-focused tools my full time job.
+                        In January 2024, I will be graduating from university and hope to make SponsorBlock, DeArrow and future open-source user-focused tools my full time job.
                         This DeArrow paywall is how I believe I'm going to make that possible.
                     </p>
 
