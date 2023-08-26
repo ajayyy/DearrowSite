@@ -119,7 +119,7 @@ const PaymentsPage = () => {
 
                     <p className="text">
                         With this paywall, I am trying to create a funding mechanism for my projects while still allowing universal access.
-                        That's why <b>if you cannot or do not want to pay, I very much still want you to still be able to use DeArrow as much as anyone else using the button at the bottom.</b>{" "}
+                        That's why <b>if you cannot or do not want to pay, I still very much want you to be able to use DeArrow as much as anyone else using the button at the bottom.</b>{" "}
                         But, if you can pay, I would really appreciate you supporting the project.
                     </p>
                 </div>
