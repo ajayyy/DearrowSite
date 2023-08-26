@@ -104,7 +104,7 @@ const PaymentsPage = () => {
                 <div className="center row-item">
                     <a href="https://theajayyy.itch.io/dearrow" className="option-link side-by-side" target="_blank" rel="noreferrer">
                         <div id="oneTimePurchase" className="option-button inline">
-                            Buy for $3
+                            Buy for $1
                         </div>
                     </a>
                 </div>
