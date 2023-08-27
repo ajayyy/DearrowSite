@@ -44,9 +44,10 @@ if (typeof window !== "undefined") {
 const PaymentsPage = () => {
     const [showBeforeAfter, setShowBeforeAfter] = useState(false);
     const [redeemEnabled, setRedeemEnabled] = useState(false);
+    const [showRedeem, setShowRedeem] = useState(false);
     const [openFreeAccessModal, setOpenFreeAccessModal] = useState(false);
     const [showFreeTrial, setShowFreeTrial] = useState(false);
-    const [showRequestFreeAccessButton, setShowRequestFreeAccessButton] = useState(!hashParams.hideRequestFreeAccessButton);
+    const [showRequestFreeAccessButton, setShowRequestFreeAccessButton] = useState(false);
 
     const [inExtension, setInExtension] = useState(false);
     const [nextPage, setNextPage] = useState(undefined);
@@ -57,6 +58,14 @@ const PaymentsPage = () => {
 
         if (!hashParams.hideFreeTrial && !localStorageGet("usedFreeTrial")) {
             setShowFreeTrial(true);
+        }
+
+        if (!hashParams.hideRedeem) {
+            setShowRedeem(true);
+        }
+
+        if (!hashParams.hideRequestFreeAccessButton) {
+            setShowRequestFreeAccessButton(true);
         }
 
         if (!inExtension) {
@@ -132,29 +141,32 @@ const PaymentsPage = () => {
                     </a>
                 </div>
 
-                <div className="center row-item">
-                    <input 
-                        id="redeemCodeInput" 
-                        className="option-text-box" 
-                        type="text" 
-                        placeholder="Enter license key"
-                        onChange={(e) => {
-                            setRedeemEnabled(e.target.value.length > 0);
-                        }}/>
+                {
+                    showRedeem && 
+                    <div className="center row-item">
+                        <input 
+                            id="redeemCodeInput" 
+                            className="option-text-box" 
+                            type="text" 
+                            placeholder="Enter license key"
+                            onChange={(e) => {
+                                setRedeemEnabled(e.target.value.length > 0);
+                            }}/>
 
-                    <a
-                        className="option-link" 
-                        target="_blank" 
-                        rel="noreferrer"
-                        onClick={() => {
-                            if (!redeemEnabled) return;
-                            redeemLicenseKey(setRedeemEnabled, nextPage, inExtension);
-                        }}>
-                        <div className={"option-button side-by-side inline" + (!redeemEnabled ? " disabled" : "")}>
-                            Redeem
-                        </div>
-                    </a>
-                </div>
+                        <a
+                            className="option-link" 
+                            target="_blank" 
+                            rel="noreferrer"
+                            onClick={() => {
+                                if (!redeemEnabled) return;
+                                redeemLicenseKey(setRedeemEnabled, nextPage, inExtension);
+                            }}>
+                            <div className={"option-button side-by-side inline" + (!redeemEnabled ? " disabled" : "")}>
+                                Redeem
+                            </div>
+                        </a>
+                    </div>
+                }
 
                 <div className="center row-item">
                     <a href="https://www.patreon.com/oauth2/authorize?response_type=code&client_id=-W7ib8J-LB3jowb1fqE07A7RDUovy45_pOoWcjby6yr5upo6At8Jlg2BPhWDXO2k&redirect_uri=https%3A%2F%2Fsponsor.ajay.app%2Fapi%2FgenerateToken%2Fpatreon"
@@ -191,6 +203,12 @@ const PaymentsPage = () => {
                             Request Free Access
                         </div>
                     </a>
+                </div>
+
+                <div className={"center no-js-warning" + (showRequestFreeAccessButton ? " hidden" : "")}>
+                    <p className="text">
+                        Warning: This page is not fully functional when JavaScript is disabled
+                    </p>
                 </div>
 
                 {

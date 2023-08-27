@@ -85,7 +85,7 @@
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .small-width {
@@ -114,6 +114,18 @@
 
 .who-am-i .text {
     font-size: 12px;
+    max-width: 400px;
+    margin: 5px;
+}
+
+.no-js-warning {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.no-js-warning .text {
+    font-size: 14px;
     max-width: 400px;
     margin: 5px;
 }
