@@ -218,7 +218,7 @@ const PaymentsPage = () => {
                                 <p>
                                     If you cannot, or do not want to pay, you can request free access.
                                     You will not be able to use the extension right away, but instead will
-                                    recieve free access up to 3 weeks after installing.
+                                    recieve free access up to 3 days after installing.
                                 </p>
 
                                 {
