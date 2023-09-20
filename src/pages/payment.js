@@ -84,7 +84,7 @@ const PaymentsPage = () => {
             <div className="payment-container container">
                 <p>
                     DeArrow is a paid browser extension. 
-                    You can purchase an unlimited-use license key for a one time payment.
+                    You can purchase an unlimited-use license key for <b>1$</b>.
                 </p>
 
                 <p>
