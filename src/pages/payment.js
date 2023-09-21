@@ -186,7 +186,7 @@ const PaymentsPage = () => {
                     </p>
 
                     <p className="smaller no-margin small-width">
-                        Already paid but lost your key? Installed during the free beta but lost your key? Email dev@ajay.app
+                        Already paid but lost your key? Installed during the free beta but lost your key? Want an alternative payment method? Email dev@ajay.app
                     </p>
                 </div>
 
