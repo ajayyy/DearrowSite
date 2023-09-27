@@ -89,7 +89,8 @@ const PaymentsPage = () => {
 
                 <p>
                     However, if you cannot, or do not want to pay,{" "}
-                    <b>there is an option to request free access at the bottom</b>.
+                    <b>there is an option to request free access at the bottom</b>{" "}
+                    to get free access after waiting 3 days.
                 </p>
 
                 {showFreeTrial && 
@@ -218,7 +219,7 @@ const PaymentsPage = () => {
                                 <p>
                                     If you cannot, or do not want to pay, you can request free access.
                                     You will not be able to use the extension right away, but instead will
-                                    recieve free access up to 3 days after installing.
+                                    recieve free access forever up to 3 days after installing.
                                 </p>
 
                                 {
