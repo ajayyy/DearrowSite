@@ -89,8 +89,7 @@ const PaymentsPage = () => {
 
                 <p>
                     However, if you cannot, or do not want to pay,{" "}
-                    <b>there is an option to request free access at the bottom</b>{" "}
-                    to get free access after waiting 3 days.
+                    <b>there is an option to request free access at the bottom</b>.
                 </p>
 
                 {showFreeTrial && 
