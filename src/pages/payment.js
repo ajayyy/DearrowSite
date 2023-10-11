@@ -69,7 +69,9 @@ const PaymentsPage = () => {
         }
 
         if (!inExtension) {
-            setNextPage(hashParams.link ? extensionLinks[hashParams.link] : extensionLinks.chrome);
+            setNextPage(hashParams.link 
+                ? extensionLinks[hashParams.link]
+                : (navigator.userAgent.includes("Firefox") ? extensionLinks.firefox : extensionLinks.chrome));
         }
 
         setShowBeforeAfter(true);
