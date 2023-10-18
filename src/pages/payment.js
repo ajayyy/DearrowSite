@@ -8,6 +8,7 @@ import BeforeAfterImage from "../components/beforeAfterImage";
 import "./payment.scss";
 
 const serverAddress = "https://sponsor.ajay.app";
+const freeAccessWaitingPeriod = 1000 * 60 * 60 * 24 * 1.5
 
 const hashParams = getHashParams();
 let safeToSendMessages = false;
@@ -23,7 +24,8 @@ if (typeof window !== "undefined") {
                 const choices = {
                     freeTrial: localStorageGet("freeTrial"),
                     licenseKey: localStorageGet("licenseKey"),
-                    freeAccess: localStorageGet("freeAccess")
+                    freeAccess: localStorageGet("freeAccess"),
+                    freeAccessWaitingPeriod
                 }
 
                 if (choices.freeTrial || choices.licenseKey || choices.freeAccess) {
@@ -91,7 +93,8 @@ const PaymentsPage = () => {
 
                 <p>
                     However, if you cannot, or do not want to pay,{" "}
-                    <b>there is an option to request free access at the bottom</b>.
+                    <b>click the button at the bottom to use DeArrow for free</b>.
+                    No worries if you can't or don't want to pay :)
                 </p>
 
                 {showFreeTrial && 
@@ -202,7 +205,7 @@ const PaymentsPage = () => {
                             setOpenFreeAccessModal(true);
                         }}>
                         <div className="option-button inline">
-                            Request Free Access
+                            I can't/don't want to pay
                         </div>
                     </a>
                 </div>
@@ -218,9 +221,9 @@ const PaymentsPage = () => {
                         <div className="free-access-modal">
                             <div className="free-access-modal-content center">
                                 <p>
-                                    If you cannot, or do not want to pay, you can request free access.
+                                    If you cannot, or do not want to pay, you can use it after waiting some time.
                                     You will not be able to use the extension right away, but instead will
-                                    recieve free access forever up to 3 days after installing.
+                                    recieve free access (for forever) up to <b>48 hours after installing</b>.
                                 </p>
 
                                 {
@@ -235,21 +238,6 @@ const PaymentsPage = () => {
                                         </p>
                                 }
                                     
-                                {
-                                    inExtension ?
-                                        <p>
-                                            You can disable the extension if you want, but if
-                                            you do, you will not be notified when you get access, and will have to
-                                            manually check.
-                                        </p>
-                                    : 
-                                        <p>
-                                            You can disable the extension after installing if you want, but if
-                                            you do, you will not be notified when you get access, and will have to
-                                            manually check.
-                                        </p>
-                                }
-
                                 <a href={nextPage}
                                     className="option-link" 
                                     target="_blank" 
@@ -262,7 +250,7 @@ const PaymentsPage = () => {
                                     }}>
                                     <div className="option-button inline">
                                         {
-                                            inExtension ? "Request free access" : "Install extension"
+                                            inExtension ? "I want free access" : "Install extension"
                                         }
                                     </div>
                                 </a>
@@ -363,7 +351,8 @@ function requestFreeAccess(inExtension) {
         window.top.postMessage({
             message: "dearrow-payment-page-data",
             choices: {
-                freeAccess: true
+                freeAccess: true,
+                freeAccessWaitingPeriod
             }
         }, "*");
     } else {
