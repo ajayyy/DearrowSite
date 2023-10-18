@@ -221,9 +221,9 @@ const PaymentsPage = () => {
                         <div className="free-access-modal">
                             <div className="free-access-modal-content center">
                                 <p>
-                                    If you cannot, or do not want to pay, you can use it after waiting some time.
-                                    You will not be able to use the extension right away, but instead will
-                                    recieve free access (for forever) up to <b>48 hours after installing</b>.
+                                    If you cannot, or do not want to pay, you can use DeArrow after waiting some time.
+                                    You will not be able to use DeArrow right away, but instead will
+                                    recieve free access (that lasts forever) up to <b>48 hours after installing</b>.
                                 </p>
 
                                 {
