@@ -210,7 +210,7 @@ const PaymentsPage = () => {
                     </a>
                 </div>
 
-                <div className={"center no-js-warning" + (showRequestFreeAccessButton ? " hidden" : "")}>
+                <div className={"center no-js-warning" + (showBeforeAfter ? " hidden" : "")}>
                     <p className="text">
                         Warning: This page is not fully functional when JavaScript is disabled
                     </p>
