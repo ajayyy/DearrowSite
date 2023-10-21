@@ -8,7 +8,7 @@ import BeforeAfterImage from "../components/beforeAfterImage";
 import "./payment.scss";
 
 const serverAddress = "https://sponsor.ajay.app";
-const freeAccessWaitingPeriod = 1000 * 60 * 60 * 24 * 1.5
+const freeAccessWaitingPeriod = 1000 * 60 * 60 * 24 * 0.75
 
 const hashParams = getHashParams();
 let safeToSendMessages = false;
@@ -223,7 +223,7 @@ const PaymentsPage = () => {
                                 <p>
                                     If you cannot, or do not want to pay, you can use DeArrow after waiting some time.
                                     You will not be able to use DeArrow right away, but instead will
-                                    recieve free access (that lasts forever) up to <b>48 hours after installing</b>.
+                                    recieve free access (that lasts forever) up to <b>24 hours after installing</b>.
                                 </p>
 
                                 {
