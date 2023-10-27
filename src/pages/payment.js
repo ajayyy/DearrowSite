@@ -8,7 +8,7 @@ import BeforeAfterImage from "../components/beforeAfterImage";
 import "./payment.scss";
 
 const serverAddress = "https://sponsor.ajay.app";
-const freeAccessWaitingPeriod = 1000 * 60 * 60 * 24 * 0.75
+const freeAccessWaitingPeriod = 1000 * 60 * 60 * 12
 
 const hashParams = getHashParams();
 let safeToSendMessages = false;
