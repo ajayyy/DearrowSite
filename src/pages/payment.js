@@ -173,15 +173,6 @@ const PaymentsPage = () => {
                     </div>
                 }
 
-                <div className="center row-item">
-                    <a href="https://www.patreon.com/oauth2/authorize?response_type=code&client_id=-W7ib8J-LB3jowb1fqE07A7RDUovy45_pOoWcjby6yr5upo6At8Jlg2BPhWDXO2k&redirect_uri=https%3A%2F%2Fsponsor.ajay.app%2Fapi%2FgenerateToken%2Fpatreon"
-                        className="option-link" target="_blank" rel="noreferrer">
-                        <div className="option-button inline">
-                            Patreon Sign In
-                        </div>
-                    </a>
-                </div>
-
                 <div className="flex-center">
                     <p className="smaller small-width no-top-margin">
                         Privacy Note: Other than intially checking your license key,{" "}
