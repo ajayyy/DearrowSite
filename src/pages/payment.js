@@ -48,6 +48,7 @@ const PaymentsPage = () => {
     const [redeemEnabled, setRedeemEnabled] = useState(false);
     const [showRedeem, setShowRedeem] = useState(false);
     const [openFreeAccessModal, setOpenFreeAccessModal] = useState(false);
+    const [badPaymentMethods, setBadPaymentMethods] = useState(false);
     const [showFreeTrial, setShowFreeTrial] = useState(false);
     const [showRequestFreeAccessButton, setShowRequestFreeAccessButton] = useState(false);
 
@@ -182,7 +183,7 @@ const PaymentsPage = () => {
                     </p>
 
                     <p className="smaller no-margin small-width">
-                        Already paid but lost your key? Installed during the free beta but lost your key? Want an alternative payment method? Email dev@ajay.app
+                        Already paid but lost your key? Installed during the free beta but lost your key? Email dev@ajay.app
                     </p>
                 </div>
 
@@ -194,9 +195,24 @@ const PaymentsPage = () => {
                         rel="noreferrer"
                         onClick={() => {
                             setOpenFreeAccessModal(true);
+                            setBadPaymentMethods(false);
                         }}>
                         <div className="option-button inline">
                             I can't/don't want to pay
+                        </div>
+                    </a>
+                </div>
+
+                <div className={"center" + (!showRequestFreeAccessButton ? " hidden" : "")}>
+                    <a className="option-link" 
+                        target="_blank" 
+                        rel="noreferrer"
+                        onClick={() => {
+                            setOpenFreeAccessModal(true);
+                            setBadPaymentMethods(true);
+                        }}>
+                        <div className="option-button inline">
+                            None of the payment methods work for me
                         </div>
                     </a>
                 </div>
@@ -211,11 +227,38 @@ const PaymentsPage = () => {
                     openFreeAccessModal && (
                         <div className="free-access-modal">
                             <div className="free-access-modal-content center">
-                                <p>
-                                    If you cannot, or do not want to pay, you can use DeArrow after waiting some time.
-                                    You will not be able to use DeArrow right away, but instead will
-                                    recieve free access (that lasts forever) up to <b>24 hours after installing</b>.
-                                </p>
+
+                                {
+                                    badPaymentMethods ?
+                                    <>
+                                        <p>
+                                            I really appreciate you wanting to help support the project,
+                                            but, unfortunetly, I am unable to set up other payment methods at this time.
+                                            I understand that you may have privacy concerns with credit cards,
+                                            cannot pay due to sanctions or just don't having access to a credit card.
+                                        </p>
+                                        <p>
+                                            You can use the button below to request free access (that lasts forever),
+                                            but you'll have to wait up to <b>24 hours after installing</b> to use it.
+                                            If you want to speed this up, feel free to send me an email dev @ ajay.app
+                                        </p>
+                                        <p>
+                                            And if you still do want to support the project, you can check the list of{" "}
+                                            <a 
+                                                href="https://dearrow.ajay.app/donate" 
+                                                target="_blank" 
+                                                rel="noreferrer">
+                                                    donation options
+                                            </a> to see if one works for you (it has a few more options), but don't worry if you still can't :)
+                                        </p>
+                                    </>
+                                    :
+                                    <p>
+                                        If you cannot, or do not want to pay, you can use DeArrow after waiting some time.
+                                        You will not be able to use DeArrow right away, but instead will
+                                        recieve free access (that lasts forever) up to <b>24 hours after installing</b>.
+                                    </p>
+                                }
 
                                 {
                                     inExtension ?
