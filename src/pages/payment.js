@@ -235,7 +235,7 @@ const PaymentsPage = () => {
                                             I really appreciate you wanting to help support the project,
                                             but, unfortunetly, I am unable to set up other payment methods at this time.
                                             I understand that you may have privacy concerns with credit cards,
-                                            cannot pay due to sanctions or just don't having access to a credit card.
+                                            cannot pay due to sanctions or just don't have access to a credit card.
                                         </p>
                                         <p>
                                             You can use the button below to request free access (that lasts forever),
