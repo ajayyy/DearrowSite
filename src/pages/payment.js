@@ -71,6 +71,10 @@ const PaymentsPage = () => {
             setShowRequestFreeAccessButton(true);
         }
 
+        if (hashParams.free) {
+            setOpenFreeAccessModal(true);
+        }
+
         if (!inExtension) {
             setNextPage(hashParams.link 
                 ? extensionLinks[hashParams.link]
