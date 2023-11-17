@@ -110,9 +110,13 @@ const PaymentsPage = () => {
                                 setShowFreeTrial(false);
                             }}>
                             <div className="option-button side-by-side inline">
-                                Try it out for an hour (No credit card required)
+                                Try it out for an hour
                             </div>
                         </a>
+
+                        <div className="free-trial-text">
+                            No sign up or credit card required
+                        </div>
                     </div>
                 }
 
