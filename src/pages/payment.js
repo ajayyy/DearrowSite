@@ -241,7 +241,7 @@ const PaymentsPage = () => {
                                     <>
                                         <p>
                                             I really appreciate you wanting to help support the project,
-                                            but, unfortunetly, I am unable to set up other payment methods at this time.
+                                            but, unfortunately, I am unable to set up other payment methods at this time.
                                             I understand that you may have privacy concerns with credit cards,
                                             cannot pay due to sanctions or just don't have access to a credit card.
                                         </p>
@@ -264,7 +264,7 @@ const PaymentsPage = () => {
                                     <p>
                                         If you cannot, or do not want to pay, you can use DeArrow after waiting some time.
                                         You will not be able to use DeArrow right away, but instead will
-                                        recieve free access (that lasts forever) up to <b>24 hours after installing</b>.
+                                        receive free access (that lasts forever) up to <b>24 hours after installing</b>.
                                     </p>
                                 }
 
