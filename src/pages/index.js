@@ -301,6 +301,10 @@ const IndexPage = () => {
                         {", "}
                         <a href="donate">Donate</a>
                     </p>
+
+                    <p className="text-center">
+                        <a href="free">DeArrow Free</a>
+                    </p>
                 </div>
             </div>
         </Layout>
