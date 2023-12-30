@@ -59,7 +59,7 @@ const PaymentsPage = () => {
         const inExtension = window.top !== window.self;
         setInExtension(inExtension);
 
-        if (!hashParams.hideFreeTrial && !localStorageGet("usedFreeTrial")) {
+        if (hashParams.hideFreeTrial === false || !localStorageGet("usedFreeTrial")) {
             setShowFreeTrial(true);
         }
 
