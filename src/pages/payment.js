@@ -114,7 +114,7 @@ const PaymentsPage = () => {
                                 setShowFreeTrial(false);
                             }}>
                             <div className="option-button side-by-side inline">
-                                Start a 6 hour trial
+                                Start a free 6 hour trial
                             </div>
                         </a>
 
