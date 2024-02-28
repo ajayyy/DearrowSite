@@ -92,13 +92,13 @@ const PaymentsPage = () => {
 
             <div className="payment-container container">
                 <p>
-                    DeArrow is a paid browser extension. 
+                    DeArrow is a paid (if you want) browser extension. 
                     You can purchase an unlimited-use license key for <b>1$</b>.
                 </p>
 
                 <p>
                     However, if you cannot, or do not want to pay,{" "}
-                    <b>click the button at the bottom to use DeArrow for free</b>.
+                    <b>you can click the button at the bottom to use DeArrow for free</b>.
                     No worries if you can't or don't want to pay :)
                 </p>
 
@@ -120,6 +120,8 @@ const PaymentsPage = () => {
 
                         <div className="free-trial-text">
                             No sign up or credit card required
+                            <br/>
+                            You can start another trial if you run out of time
                         </div>
                     </div>
                 }
@@ -247,7 +249,7 @@ const PaymentsPage = () => {
                                         </p>
                                         <p>
                                             You can use the button below to request free access (that lasts forever),
-                                            but you'll have to wait up to <b>24 hours after installing</b> to use it.
+                                            but you'll have to wait up to <b>12 hours after installing</b> to use it.
                                             If you want to speed this up, feel free to send me an email dev @ ajay.app
                                         </p>
                                         <p>
@@ -264,7 +266,7 @@ const PaymentsPage = () => {
                                     <p>
                                         If you cannot, or do not want to pay, you can use DeArrow after waiting some time.
                                         You will not be able to use DeArrow right away, but instead will
-                                        receive free access (that lasts forever) up to <b>24 hours after installing</b>.
+                                        receive free access (that lasts forever) up to <b>12 hours after installing</b>.
                                     </p>
                                 }
 
