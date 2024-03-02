@@ -177,6 +177,24 @@ const IndexPage = () => {
                                 alt="Download for Discord Integrations"
                                 style={{ height: "30px" }} />
                         </a>
+
+                        <a
+                            href="https://wiki.sponsor.ajay.app/w/DeArrow/Community#TV"
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img src="/tv.png"
+                                alt="Download for TV"
+                                style={{ height: "30px" }} />
+                        </a>
+
+                        <a
+                            href="https://smarttubeapp.github.io/"
+                            style={{ paddingLeft: "15px" }}
+                        >
+                            <img src="/androidtv.png"
+                                alt="Download for Android TV"
+                                style={{ height: "30px" }} />
+                        </a>
                     </div>
 
                     <p>
