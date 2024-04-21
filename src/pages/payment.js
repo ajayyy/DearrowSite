@@ -264,9 +264,9 @@ const PaymentsPage = () => {
                                     </>
                                     :
                                     <p>
-                                        If you cannot, or do not want to pay, you can use DeArrow after waiting some time.
-                                        You will not be able to use DeArrow right away, but instead will
-                                        receive free access (that lasts forever) up to <b>12 hours after installing</b>.
+                                        If you cannot, or do not want to pay, you can use the button below use DeArrow
+                                        <b>after waiting up to 12 hours</b>.
+                                        After waiting, you will be able to use DeArrow for free, forever.
                                     </p>
                                 }
 
