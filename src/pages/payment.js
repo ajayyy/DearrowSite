@@ -264,8 +264,8 @@ const PaymentsPage = () => {
                                     </>
                                     :
                                     <p>
-                                        If you cannot, or do not want to pay, you can use the button below use DeArrow
-                                        <b>after waiting up to 12 hours</b>.
+                                        If you cannot, or do not want to pay, you can use the button below get 
+                                        free access to DeArrow <b>after waiting up to 12 hours</b>.
                                         After waiting, you will be able to use DeArrow for free, forever.
                                     </p>
                                 }
