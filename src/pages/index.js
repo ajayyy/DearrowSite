@@ -7,7 +7,7 @@ import Seo from "../components/seo";
 import { extensionLinks } from "../utils/links";
 import BeforeAfterImage from "../components/beforeAfterImage";
 
-const paywallEnabled = true;
+const paywallEnabled = false;
 
 const IndexPage = () => {
     const [totalStats, setTotalStats] = useState({
