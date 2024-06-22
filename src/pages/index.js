@@ -29,7 +29,10 @@ const IndexPage = () => {
     useEffect(() => {
         fetch("https://sponsor.ajay.app/api/brandingStats")
             .then((response) => response.json())
-            .then((resultData) => resultData.activeUsers !== undefined ? setTotalStats(resultData) : null);
+            .then((resultData) => resultData.activeUsers !== undefined ? setTotalStats({
+                ...resultData,
+                activeUsers: Math.max(resultData.activeUsers, 19502 + 45132)
+            }) : null);
     }, []);
 
     return (
