@@ -31,7 +31,7 @@ const IndexPage = () => {
             .then((response) => response.json())
             .then((resultData) => resultData.activeUsers !== undefined ? setTotalStats({
                 ...resultData,
-                activeUsers: String(Math.max(resultData.activeUsers, 19502 + 45132))
+                activeUsers: Math.max(resultData.activeUsers, 19502 + 45132)
             }) : null);
     }, []);
 
