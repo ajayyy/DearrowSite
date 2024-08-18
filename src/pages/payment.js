@@ -59,7 +59,7 @@ const PaymentsPage = () => {
         const inExtension = window.top !== window.self;
         setInExtension(inExtension);
 
-        if (hashParams.hideFreeTrial === false || !localStorageGet("usedFreeTrial")) {
+        if (hashParams.freeTrialActive !== true) {
             setShowFreeTrial(true);
         }
 
@@ -341,8 +341,6 @@ function startFreeTrial(inExtension) {
     } else {
         localStorageSet("freeTrial", true);
     }
-
-    localStorageSet("usedFreeTrial", true);
 }
 
 async function redeemLicenseKey(setRedeemEnabled, nextPage, inExtension) {
