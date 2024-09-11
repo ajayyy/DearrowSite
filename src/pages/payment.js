@@ -25,6 +25,7 @@ if (typeof window !== "undefined") {
                     freeTrial: localStorageGet("freeTrial"),
                     licenseKey: localStorageGet("licenseKey"),
                     freeAccess: localStorageGet("freeAccess"),
+                    freeInstantAccess: localStorageGet("freeInstantAccess"),
                     freeAccessWaitingPeriod
                 }
 
@@ -37,6 +38,7 @@ if (typeof window !== "undefined") {
                     localStorage.removeItem("freeTrial");
                     localStorage.removeItem("licenseKey");
                     localStorage.removeItem("freeAccess");
+                    localStorage.removeItem("freeInstantAccess");
                 }
             }
         });
@@ -248,9 +250,8 @@ const PaymentsPage = () => {
                                             cannot pay due to sanctions or just don't have access to a credit card.
                                         </p>
                                         <p>
-                                            You can use the button below to request free access (that lasts forever),
-                                            but you'll have to wait up to <b>12 hours after installing</b> to use it.
-                                            If you want to speed this up, feel free to send me an email dev @ ajay.app
+                                            You can use the button below to use the extension for free, forever.
+                                            You'll be able to use it right away.
                                         </p>
                                         <p>
                                             And if you still do want to support the project, you can check the list of{" "}
@@ -263,22 +264,30 @@ const PaymentsPage = () => {
                                         </p>
                                     </>
                                     :
-                                    <p>
-                                        If you cannot, or do not want to pay, you can use the button below get 
-                                        free access to DeArrow <b>after waiting up to 12 hours</b>.
-                                        After waiting, you will be able to use DeArrow for free, forever.
-                                    </p>
+                                    <>
+                                        <p>
+                                            If you cannot, or do not want to pay, you can use the button below 
+                                            use DeArrow for free, forever.
+                                        </p>
+
+                                        <p>
+                                            If you want to, or are able to support the project at a later time,
+                                            that is always possible using any of the <a 
+                                                href="https://dearrow.ajay.app/donate" 
+                                                target="_blank" 
+                                                rel="noreferrer">
+                                                    donation options
+                                            </a>.
+                                        </p>
+                                    </>
                                 }
 
                                 {
                                     inExtension ?
-                                        <p>
-                                            It will notify you when you get access.
-                                        </p>
+                                        null
                                     : 
                                         <p>
-                                            Install the extension to get started, it will notify you when you
-                                            get access.
+                                            Install the extension to get started.
                                         </p>
                                 }
                                     
@@ -294,7 +303,7 @@ const PaymentsPage = () => {
                                     }}>
                                     <div className="option-button inline">
                                         {
-                                            inExtension ? "I want free access" : "Install extension"
+                                            inExtension ? "Use the extension for free" : "Install extension"
                                         }
                                     </div>
                                 </a>
@@ -394,11 +403,13 @@ function requestFreeAccess(inExtension) {
             message: "dearrow-payment-page-data",
             choices: {
                 freeAccess: true,
+                freeInstantAccess: true,
                 freeAccessWaitingPeriod
             }
         }, "*");
     } else {
         localStorageSet("freeAccess", true);
+        localStorageSet("freeInstantAccess", true);
     }
 }
 
