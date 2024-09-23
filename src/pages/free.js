@@ -11,7 +11,7 @@ const FreePage = () => {
             />
             <div className="container">
                 <p className="text-center">
-                    DeArrow can be used for free after waiting a day
+                    DeArrow can be used for free by clicking "I can't/don't want to pay"
                 </p>
 
                 <div className="center row-item">
