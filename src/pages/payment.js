@@ -8,7 +8,8 @@ import BeforeAfterImage from "../components/beforeAfterImage";
 import "./payment.scss";
 
 const serverAddress = "https://sponsor.ajay.app";
-const freeAccessWaitingPeriod = 1000 * 60 * 60 * 12
+const freeAccessWaitingPeriod = 1000 * 60 * 60 * 12;
+const freeTrialDuration = 1000 * 60 * 60 * 24;
 
 const hashParams = getHashParams();
 let safeToSendMessages = false;
@@ -26,7 +27,8 @@ if (typeof window !== "undefined") {
                     licenseKey: localStorageGet("licenseKey"),
                     freeAccess: localStorageGet("freeAccess"),
                     freeInstantAccess: localStorageGet("freeInstantAccess"),
-                    freeAccessWaitingPeriod
+                    freeAccessWaitingPeriod,
+                    freeTrialDuration
                 }
 
                 if (choices.freeTrial || choices.licenseKey || choices.freeAccess) {
@@ -116,7 +118,7 @@ const PaymentsPage = () => {
                                 setShowFreeTrial(false);
                             }}>
                             <div className="option-button side-by-side inline">
-                                Start a free 6 hour trial
+                                Start a free 24 hour trial
                             </div>
                         </a>
 
@@ -344,7 +346,8 @@ function startFreeTrial(inExtension) {
         window.top.postMessage({
             message: "dearrow-payment-page-data",
             choices: {
-                freeTrial: true
+                freeTrial: true,
+                freeTrialDuration
             }
         }, "*");
     } else {
