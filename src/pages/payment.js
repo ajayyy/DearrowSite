@@ -137,13 +137,12 @@ const PaymentsPage = () => {
 
                     <p className="text">
                         Hi, I'm Ajay.
-                        For the last 4 years, I've been working on SponsorBlock, an open-source privacy respecting browser extension and open API for skipping and identifying sponsors and other annoyances in YouTube videos.
-                        In June, I launched DeArrow, an extension targeting the next biggest annoyance on YouTube.
+                        For the past 5 years, I've been working on SponsorBlock, an open-source privacy respecting browser extension and open API for skipping and identifying sponsors and other annoyances in YouTube videos.
+                        In June 2024, I launched DeArrow, an extension targeting the next biggest annoyance on YouTube.
                     </p>
 
                     <p className="text">
-                        In January 2024, I will be graduating from university and hope to make SponsorBlock, DeArrow and future open-source user-focused tools my full time job.
-                        This DeArrow paywall is how I believe I'm going to make that possible.
+                       Last year I graduated from university and am now working on SponsorBlock and DeArrow as my full time job.
                     </p>
 
                     <p className="text">
