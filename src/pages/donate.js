@@ -61,7 +61,7 @@ const IndexPage = () => (
                 </a>
                 , and replacement title and thumbnail contributors{" "}
                 such as <a href="https://mchang.name/">Michael Chang</a>,{" "}
-                <a href="https://github.com/mschae23">mschae23</a>,{" "}
+                <a href="https://mschae23.de">mschae23</a>,{" "}
                 <a href="https://github.com/SuperManifolds">Alex Sørlie</a>,{" "}
                 <a href="https://mlnr.dev/">cane</a>,{" "}
                 UnventedManicotti,{" "}
