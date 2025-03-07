@@ -33,7 +33,7 @@ const CasualPage = () => {
                         You'll be able to vote if a title fits into a category or not.
                     </p>
 
-                    <img src={"casual-vs-normal.png"} 
+                    <img src={"/casual-vs-normal.png"} 
                         className="before-after-image" 
                         alt="Casual mode setting" />
 
