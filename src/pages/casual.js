@@ -42,6 +42,11 @@ const CasualPage = () => {
                         allowfullscreen>
                     </iframe>
 
+                    <p>
+                        Read more about casual mode <a href="https://wiki.sponsor.ajay.app/w/DeArrow/Casual_mode">on the wiki</a>
+                    </p>
+
+
                     <DownloadLinks/>
 
                     <p className="text-center">
