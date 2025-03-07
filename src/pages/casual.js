@@ -24,7 +24,7 @@ const CasualPage = () => {
                 <div className="">
                     <p>
                         DeArrow is an open source browser extension for crowdsourcing better titles and thumbnails on YouTube.
-                        The goal is to make titles accurate and reduce sensationalism. No more arrows, ridiculous faces, and no more clickbait.
+                        The goal is to make titles accurate and reduce sensationalism.
                     </p>
 
                     <p>
