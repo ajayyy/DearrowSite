@@ -26,7 +26,7 @@ const DownloadLinks = () => {
             .then((response) => response.json())
             .then((resultData) => resultData.activeUsers !== undefined ? setTotalStats({
                 ...resultData,
-                activeUsers: Math.max(resultData.activeUsers, 27026 + 62896)
+                activeUsers: Math.max(resultData.activeUsers, 31648 + 72410)
             }) : null);
     }, []);
 
