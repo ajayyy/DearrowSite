@@ -97,11 +97,6 @@ const PaymentsPage = () => {
             <div className="payment-container container">
 
                 <p>
-                    <b>Please note:</b> Thumbnail replacements are currently broken in extension versions before 2.1.7 due to a YouTube change.
-                    It will take some time for this fix to roll out to all extension stores due to their review times.
-                </p>
-
-                <p>
                     DeArrow is a paid (if you want) browser extension. 
                     You can purchase an unlimited-use license key for <b>1$</b>.
                 </p>
