@@ -44,6 +44,12 @@ if (typeof window !== "undefined") {
                 }
             }
         });
+    } else if (!document.querySelector("extensionInstalled")) {
+        const licenseKey = window.location.hash.match(/key=([^=&]+)/)?.[1];
+        if (licenseKey) {
+            localStorageSet("licenseKey", licenseKey);
+            window.location.replace(navigator.userAgent.includes("Firefox") ? extensionLinks.firefox : extensionLinks.chrome);
+        }
     }
 }
 
