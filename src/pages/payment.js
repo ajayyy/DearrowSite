@@ -125,7 +125,7 @@ const PaymentsPage = () => {
                                 setShowFreeTrial(false);
                             }}>
                             <div className="option-button side-by-side inline">
-                                Start a free 6 hour trial
+                                Try it for 6 hours
                             </div>
                         </a>
 
@@ -137,6 +137,14 @@ const PaymentsPage = () => {
                     </div>
                 }
 
+                <div className="center row-item">
+                    <a href="https://theajayyy.itch.io/dearrow" className="option-link side-by-side" target="_blank" rel="noreferrer">
+                        <div id="oneTimePurchase" className="option-button inline">
+                            Buy for $1
+                        </div>
+                    </a>
+                </div>
+
                 <div className="center row-item who-am-i">
                     <p className="header">
                         Who am I?
@@ -144,27 +152,15 @@ const PaymentsPage = () => {
 
                     <p className="text">
                         Hi, I'm Ajay.
-                        For the past 5 years, I've been working on SponsorBlock, an open-source privacy respecting browser extension and open API for skipping and identifying sponsors and other annoyances in YouTube videos.
-                        In June 2024, I launched DeArrow, an extension targeting the next biggest annoyance on YouTube.
+                        For the past 6 years, I've been working on SponsorBlock, an open-source privacy respecting browser extension and open API for skipping and identifying sponsors and other annoyances in YouTube videos.
+                        In 2023, I launched DeArrow, an extension targeting the next biggest annoyance on YouTube.
                     </p>
 
                     <p className="text">
-                       Last year I graduated from university and am now working on SponsorBlock and DeArrow as my full time job.
-                    </p>
-
-                    <p className="text">
-                        With this paywall, I am trying to create a funding mechanism for my projects while still allowing universal access.
+                        With this paywall, I am trying to create a funding mechanism for my projects while still allowing anyone who wants to use these extensions.
                         That's why <b>if you cannot or do not want to pay, I still very much want you to be able to use DeArrow as much as anyone else using the button at the bottom.</b>{" "}
                         But, if you can pay, I would really appreciate you supporting the project.
                     </p>
-                </div>
-
-                <div className="center row-item">
-                    <a href="https://theajayyy.itch.io/dearrow" className="option-link side-by-side" target="_blank" rel="noreferrer">
-                        <div id="oneTimePurchase" className="option-button inline">
-                            Buy for $1
-                        </div>
-                    </a>
                 </div>
 
                 {
@@ -283,9 +279,9 @@ const PaymentsPage = () => {
                                     :
                                     <>
                                         <p>
-                                            If you cannot, or do not want to pay, you can use the button below get 
-                                            free access to DeArrow <b>after waiting up to 12 hours</b>.
-                                            After waiting, you will be able to use DeArrow for free, forever.
+                                            Click the button below to request to use DeArrow for free, forever.
+                                            You will be able to use DeArrow <b> after waiting up to 12 hours</b>.
+                                            DeArrow will automatically activate once you get access!
                                         </p>
 
                                         {
